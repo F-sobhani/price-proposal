@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>پروپوزال تعرفه تدوین ویدیوهای لانگ یوتیوب | پله به پله</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: a Notion-style page (single column, callouts with emoji, h2 + divider), matching the resume */
+:root{
+  color-scheme:light;
+  --ink:#37352f; --muted:#787774; --line:#e9e9e7; --bg:#ffffff;
+  --gray-bg:#f1f1ef; --yellow-bg:#fbf3db; --purple-bg:#f6f3f9; --blue-bg:#e7f3f8; --green-bg:#edf3ec; --pink-bg:#fbf2f5; --orange-bg:#faebdd;
+  --blue:#337ea9; --green:#448361; --pink:#c14c8a; --purple:#9065b0;
+  --font:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--font);font-size:16px;line-height:1.9}
+.page{max-width:900px;margin:0 auto;padding-inline:16px;padding-block:48px 80px}
+.icon{font-size:64px;line-height:1;margin-bottom:12px}
+h1{font-size:2.1rem;font-weight:800;margin:0 0 8px;line-height:1.4;text-wrap:balance}
+.tagline{color:var(--pink);text-decoration:underline;text-underline-offset:6px;font-weight:700;margin:0 0 24px}
+h2{font-size:1.45rem;font-weight:700;margin:44px 0 6px}
+h2+hr{border:0;border-top:1px solid var(--line);margin:0 0 16px}
+h3{font-size:1.1rem;margin:0 0 6px}
+p{margin:0 0 10px}
+.b{color:var(--blue);font-weight:700}
+.g{color:var(--green);font-weight:700}
+.callout{display:flex;gap:10px;align-items:flex-start;border-radius:6px;padding:14px 16px;background:var(--gray-bg);min-width:0}
+.callout .e{font-size:1.25rem;line-height:1.6;flex:none}
+.callout>div{min-width:0}
+.callout.y{background:var(--yellow-bg)}.callout.p{background:var(--purple-bg)}.callout.bl{background:var(--blue-bg)}.callout.gr{background:var(--green-bg)}.callout.pk{background:var(--pink-bg)}.callout.o{background:var(--orange-bg)}
+.callout.plain{background:transparent;border:1px solid var(--line)}
+blockquote{margin:0 0 12px;border-inline-start:3px solid var(--ink);padding-inline-start:14px}
+.cols{display:grid;gap:12px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.c3,.c4{grid-template-columns:minmax(0,1fr)}.c2{grid-template-columns:minmax(0,1fr)}}
+.small{font-size:.88rem;color:var(--muted)}
+ul.tight{margin:0;padding-inline-start:20px}
+/* selects (Notion-like pills) */
+.label{font-size:.85rem;color:var(--muted);margin:16px 0 6px;font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font:inherit;font-size:.95rem;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer;text-align:right}
+.pill small{display:block;color:var(--muted);font-size:.78rem;line-height:1.6}
+.pill[aria-pressed="true"]{background:var(--blue-bg);border-color:var(--blue);color:var(--blue)}
+.pill[aria-pressed="true"] small{color:var(--blue)}
+.lv .pill{flex:1 1 220px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--blue)}
+input[type=number],select{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 10px;width:110px}
+.field{display:flex;flex-direction:column;gap:4px;font-size:.88rem;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end}
+.check{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.95rem}
+.check input{width:17px;height:17px;accent-color:var(--blue)}
+.ruler{display:flex;gap:4px;margin-top:6px}
+.ruler div{flex:1;min-width:0;text-align:center;font-size:.78rem;color:var(--muted);border-radius:4px;background:var(--gray-bg);padding:3px 2px;font-variant-numeric:tabular-nums}
+.ruler div.on{background:var(--blue);color:#fff;font-weight:700}
+.mins{font-weight:800;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}
+@media (max-width:820px){.calc{grid-template-columns:minmax(0,1fr)}}
+.receipt{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);max-height:calc(100vh - 24px);overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+@media (max-width:820px){.side{position:static;max-height:none;overflow:visible}}
+.receipt .head{background:var(--yellow-bg);padding:14px 16px}
+.total{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.5}
+.lines{padding:10px 16px;display:flex;flex-direction:column;gap:4px}
+.line{display:flex;justify-content:space-between;gap:10px;font-size:.86rem}
+.line span:first-child{color:var(--muted);min-width:0}
+.line span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.line.sum{border-top:1px solid var(--line);padding-top:6px;margin-top:4px;font-weight:700}
+.line.sum span:first-child{color:var(--ink)}
+.acts{padding:10px 16px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.9rem;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:6px;padding:5px 12px;cursor:pointer}
+.btn.main{background:var(--blue);border-color:var(--blue);color:#fff}
+.pkg ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.pkg li{display:flex;justify-content:space-between;gap:8px;font-size:.84rem;border-bottom:1px solid var(--line);padding-bottom:4px}
+.pkg li button{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit}
+.note{font-size:.84rem;color:var(--muted);margin-top:6px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:.92rem;font-variant-numeric:tabular-nums}
+th,td{padding:8px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:var(--gray-bg);font-weight:500;color:var(--muted);font-size:.85rem}
+tr:last-child td{border-bottom:0}
+td.w{white-space:normal;min-width:240px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+a{color:var(--blue)}
+.sig{margin-top:44px}
+@media (prefers-reduced-motion:no-preference){.pill,.ruler div{transition:background .15s,border-color .15s}}
+</style>
+</head>
+<body>
+<main class="page">
+
+<div class="icon" aria-hidden="true">🎬</div>
+<h1>پروپوزال تعرفهٔ تدوین ویدیوهای لانگ مناسب یوتیوب</h1>
+<p class="tagline">برای پله به پله · فاطمه سادات علی‌سبحانی · ۱۴ مهر ۱۴۰۵</p>
+
+<div class="callout"><span class="e">💰</span><div>همهٔ مبالغ این صفحه به <span class="b">تومان</span> است.</div></div>
+
+<h2>مقدمه</h2><hr>
+<div class="callout"><span class="e">📌</span><div>
+<p>سلام و وقت بخیر 🌱</p>
+<p>برای آماده کردن این تعرفه، نمونه‌هایی را که فرستادید با دقت بررسی کردم و ویدیوهای فعلی کانال پله به پله را هم دیدم. طبق صحبتمان، تدوین چهار نوع ویدیوی بلند یوتیوب مد نظر شماست: <span class="b">مونولوگ، ولاگ، پادکست و محتوای تیمی</span>.</p>
+<p>قیمت هر ویدیو به سه چیز بستگی دارد: نوع ویدیو، طول نسخهٔ نهایی و سطح پیچیدگی تدوین. برای اینکه اثر هر کدام از این متغیرها روشن باشد، یک ماشین‌حساب در همین صفحه گذاشته‌ام. می‌توانید هر ترکیبی را امتحان کنید و قیمتش را همان لحظه ببینید.</p>
+</div></div>
+
+<h2>قیمت چطور محاسبه می‌شود؟</h2><hr>
+<div class="cols c3">
+  <div class="callout bl"><span class="e">🎞️</span><div><strong>نوع ویدیو</strong><br><span class="small">مونولوگ، ولاگ، پادکست یا تیمی. هر نوع نرخ پایهٔ خودش را دارد.</span></div></div>
+  <div class="callout bl"><span class="e">⏱️</span><div><strong>طول نسخهٔ نهایی</strong><br><span class="small">قیمت بر اساس بازهٔ زمانی ویدیوی تدوین‌شدهٔ نهایی تعیین می‌شود، نه فوتیج خام. فوتیج خام تا حد معقول (جدول زیر) در قیمت حساب شده است و فقط اگر از این حد بیشتر شود، هزینهٔ جداگانه دارد.</span></div></div>
+  <div class="callout bl"><span class="e">🎚️</span><div><strong>سطح پیچیدگی تدوین</strong><br><span class="small">سه سطح پایه، متوسط و کامل؛ از پیچیدگی کم تا پیچیدگی زیاد.</span></div></div>
+</div>
+<div class="tbl" style="margin-top:12px"><table>
+  <thead><tr><th>نوع ویدیو</th><th>فوتیج خامی که در قیمت حساب شده</th><th>هر ساعت فوتیج بیشتر</th></tr></thead>
+  <tbody>
+    <tr><td>🎤 مونولوگ</td><td>تا ۲ برابر طول نسخهٔ نهایی</td><td>۴۰۰ هزار</td></tr>
+    <tr><td>🎙️ پادکست</td><td>تا ۱٫۳ برابر طول نسخهٔ نهایی</td><td>۴۰۰ هزار</td></tr>
+    <tr><td>🎒 ولاگ</td><td>تا ۲ ساعت</td><td>۶۵۰ هزار</td></tr>
+    <tr><td>👥 تیمی</td><td>تا ۲ ساعت</td><td>۶۵۰ هزار</td></tr>
+  </tbody></table></div>
+<p class="small" style="margin-top:10px">مثلاً برای یک مونولوگ ۲۰ دقیقه‌ای، تا ۴۰ دقیقه فوتیج خام داخل قیمت است.</p>
+<div class="callout p" style="margin-top:10px"><span class="e">➕</span><div><span class="small">خدمات اختیاری مثل اصلاح رنگ، تهیهٔ تصویر، طراحی اختصاصی یا کلیپ ساخته‌شده با هوش مصنوعی، جداگانه به قیمت اضافه می‌شوند.</span></div></div>
+
+<h2>پیشنهاد شروع همکاری</h2><hr>
+<div class="callout gr"><span class="e">🚀</span><div>
+<p>برای ماه اول، پیشنهادم یک پکیج چهار ویدیویی در همان سطحی است که نمونه‌های ارسالی شما نشان می‌دهند: مونولوگ در سطح کامل و پادکست در سطح متوسط.</p>
+<div class="tbl" style="background:#fff;margin:8px 0"><table>
+<thead><tr><th>ویدیو</th><th>سطح</th><th>قیمت</th></tr></thead>
+<tbody id="starterRows"></tbody></table></div>
+<p style="margin:0"><strong id="starterTotal"></strong></p>
+<p class="small" style="margin:6px 0 0">ماه اول فرصتی است که به سبک و فرمت مورد نظر شما برسیم؛ به همین دلیل محدودیت دورهای اصلاح در دو ویدیوی اول اعمال نمی‌شود. از ماه دوم می‌توانید هر ویدیو را در سطحی که لازم دارید سفارش دهید.</p>
+<p class="small" style="margin:6px 0 0">برای اینکه تحویل ویدیوها به مشکل نخورد، خوب است ابتدای هر ماه به یک تقویم تحویل مشترک برسیم. این‌طوری ویدیوها روی هم نمی‌افتند و انتشار کانال منظم می‌ماند.</p>
+<p style="margin:10px 0 0"><button class="btn main" id="useStarter">دیدن این پکیج در ماشین‌حساب</button></p>
+</div></div>
+
+
+<h2>ماشین‌حساب</h2><hr>
+<div class="calc">
+  <div>
+    <div class="label">نوع ویدیو</div>
+    <div class="pills" id="types"></div>
+
+    <div class="label">طول ویدیوی نهایی</div>
+    <div class="row" style="justify-content:space-between;align-items:center"><span class="mins" id="minOut"></span><span class="small" id="brOut"></span></div>
+    <input type="range" id="minutes" aria-label="طول ویدیوی نهایی به دقیقه">
+    <div class="ruler" id="ruler"></div>
+
+    <div class="label">سطح تدوین</div>
+    <div class="pills lv" id="levels"></div>
+
+    <div id="setup">
+      <div class="label">دوربین و نفرات</div>
+      <div class="row" id="setupPod"><label class="field">تعداد دوربین
+        <select id="podCams"><option value="2">۲ دوربین</option><option value="3" selected>۳ دوربین</option><option value="4">۴ دوربین</option><option value="5">۵ دوربین</option></select></label></div>
+      <div class="row" id="setupTeam">
+        <label class="field">تعداد دوربین <input type="number" id="teamCams" min="1" max="8" value="2"></label>
+        <label class="field">تعداد نفرات <input type="number" id="teamPeople" min="1" max="12" value="3"></label>
+      </div>
+      <p class="note" id="setupNote"></p>
+    </div>
+
+    <div class="label">فوتیج خام</div>
+    <div class="row"><label class="field">مدت ضبط (دقیقه) <input type="number" id="raw" min="0" step="5"></label><span class="small" id="rawNote"></span></div>
+
+    <div class="label">خدمات اختیاری</div>
+    <div class="row">
+      <label class="check"><input type="checkbox" id="color"> اصلاح رنگ و نور</label>
+      <label class="check"><input type="checkbox" id="rush"> تحویل فوری</label>
+    </div>
+    <div id="imgBox">
+      <div class="label">تصاویر و بی‌رول</div>
+      <div class="pills" id="archive"></div>
+      <div class="row" style="margin-top:10px">
+        <label class="field" id="fSearch">تعداد تصویر برای جستجو <input type="number" id="searchCount" min="0" value="10"><span id="autoNote" style="font-size:.78rem"></span></label>
+        <label class="field">تصویر طراحی‌شده یا AI <input type="number" id="designCount" min="0" value="0"></label>
+        <label class="field">کلیپ ویدیویی AI <input type="number" id="aiClips" min="0" value="0"></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="receipt">
+      <div class="head">
+        <div class="small" id="rTitle"></div>
+        <div class="total" id="rTotal"></div>
+        <div class="small" id="rSub"></div>
+      </div>
+      <div class="lines" id="rLines"></div>
+      <div class="acts"><button class="btn main" id="addPkg">افزودن به پکیج ماهانه</button></div>
+    </div>
+    <div class="receipt pkg">
+      <div class="head" style="background:var(--green-bg)">
+        <div class="small">پکیج ماهانه</div>
+        <div class="total" id="pTotal" style="font-size:1.3rem">—</div>
+        <div class="small" id="pInfo">ویدیوها را تنظیم کنید و به پکیج اضافه کنید.</div>
+      </div>
+      <div class="lines"><ul id="pList"></ul></div>
+      <div class="acts"><button class="btn" id="clearPkg">پاک کردن پکیج</button></div>
+    </div>
+  </div>
+</div>
+
+<h2>سطح‌های تدوین</h2><hr>
+<p>نمونه‌هایی که فرستادید و ویدیوهای فعلی کانال را با این سطح‌ها تطبیق داده‌ام تا تصویر روشن‌تری داشته باشید. ویدیوهای فعلی کانال پله به پله در سطح پایه هستند و بیشتر نمونه‌های ارسالی شما در سطح متوسط و کامل قرار می‌گیرند. علامت 📍 جایگاه هر نمونه را نشان می‌دهد.</p>
+<div class="tabs pills" id="lvTabs"></div>
+<div class="cols c3" id="lvCards"></div>
+
+<h2>جدول تعرفه</h2><hr>
+<div class="tabs pills" id="tblTabs"></div>
+<div class="tbl" id="tbl"></div>
+<p class="note" id="tblNote"></p>
+
+<h2>خدمات اختیاری</h2><hr>
+<div class="cols c2">
+  <div class="callout p"><span class="e">🌈</span><div><strong>اصلاح رنگ و نور</strong>
+    <p class="small" style="margin:4px 0 0">اصلاح رنگ و نور، اعمال پریست و یکسان‌سازی رنگ دوربین‌ها. برای ویدیوی تک‌دوربین ۱۰٪ و برای ویدیوی چنددوربینه ۱۵٪ به قیمت تدوین اضافه می‌شود. اگر فایل‌ها با پروفایل RAW یا LOG ضبط شده باشند، اصلاح رنگ ضروری است.</p></div></div>
+  <div class="callout p"><span class="e">⚡</span><div><strong>تحویل فوری</strong>
+    <p class="small" style="margin:4px 0 0">اگر ویدیویی زودتر از زمان استاندارد لازم باشد، قیمت تدوین با ضریب ۱٫۵ محاسبه می‌شود.</p></div></div>
+</div>
+<div class="tbl" style="margin-top:12px"><table>
+  <thead><tr><th>تصاویر و بی‌رول</th><th>هزینه</th></tr></thead>
+  <tbody>
+    <tr><td class="w">تصاویری که خودتان ارسال می‌کنید</td><td>بدون هزینهٔ اضافه</td></tr>
+    <tr><td class="w">جستجو و انتخاب تصویر از اینترنت</td><td class="w">سطح متوسط تا ۵ تصویر و سطح کامل تا ۱۰ تصویر را بدون هزینهٔ اضافه شامل می‌شود. هر تصویر بیشتر ۴۵ هزار (مثلاً ۱۰ تصویر اضافه ۴۵۰ هزار).</td></tr>
+    <tr><td class="w">طراحی تصویر اختصاصی (با هوش مصنوعی یا بدون آن)</td><td class="w">هر تصویر ۶۵ هزار (مثلاً ۱۰ تصویر ۶۵۰ هزار)</td></tr>
+    <tr><td class="w">کلیپ ویدیویی ساخته‌شده با هوش مصنوعی</td><td>هر کلیپ ۴۵۰ هزار</td></tr>
+  </tbody></table></div>
+<p class="note">اشتراک ابزارهای هوش مصنوعی با من است و هزینه‌اش در همین قیمت‌ها حساب شده است.</p>
+
+<h2>شرایط همکاری</h2><hr>
+<div class="cols c2">
+  <div class="callout"><span class="e">🗂️</span><div><strong>سقف فوتیج خام</strong>
+    <p class="small" style="margin:4px 0 0">قیمت هر ویدیو فوتیج خام را تا این سقف شامل می‌شود: مونولوگ تا ۲ برابر طول نهایی، پادکست تا ۱٫۳ برابر طول نهایی، ولاگ و تیمی تا ۲ ساعت. برای فوتیج بیشتر، هر ساعت اضافه در مونولوگ و پادکست ۴۰۰ هزار و در ولاگ و تیمی ۶۵۰ هزار محاسبه می‌شود.</p></div></div>
+  <div class="callout"><span class="e">✏️</span><div><strong>دورهای اصلاح</strong>
+    <p class="small" style="margin:4px 0 0">برای هر ویدیو دو دور اصلاح رایگان است و از دور سوم هزینهٔ جداگانه دارد. در دو ویدیوی اول، تا وقتی به سبک و فرمت مورد نظر شما برسیم، این محدودیت اعمال نمی‌شود.</p></div></div>
+  <div class="callout"><span class="e">📅</span><div><strong>زمان تحویل</strong>
+    <p class="small" style="margin:4px 0 0">حداکثر زمان تحویل در سطح پایه ۳ روز، متوسط ۴ روز و کامل ۱۰ روز است. پادکست‌های بلندتر از ۶۰ دقیقه و ویدیوهای تیمی یک روز بیشتر زمان می‌برند. زمان تحویل از روز دریافت کامل فوتیج حساب می‌شود.</p></div></div>
+  <div class="callout"><span class="e">📦</span><div><strong>پکیج ماهانه</strong>
+    <p class="small" style="margin:4px 0 0">برای ۴ تا ۷ ویدیو در ماه ۱۰٪ و برای ۸ ویدیو یا بیشتر ۱۵٪ تخفیف در نظر گرفته می‌شود. در پکیج ماهانه، زمان تحویل ویدیوها طبق یک تقویم توافقی تنظیم می‌شود.</p></div></div>
+  <div class="callout"><span class="e">©️</span><div><strong>حق استفاده از تصاویر</strong>
+    <p class="small" style="margin:4px 0 0">در جستجوی تصاویر تا جای ممکن از منابع آزاد استفاده می‌کنم. مسئولیت نهایی حق استفاده از تصاویر در یوتیوب با کانال است.</p></div></div>
+  <div class="callout"><span class="e">🧾</span><div><strong>هزینه‌های جانبی</strong>
+    <p class="small" style="margin:4px 0 0">اگر پروژه‌ای به عکس یا فوتیج پولی (استاک) نیاز داشته باشد، هزینهٔ لایسنس آن جداگانه است و پیش از خرید با شما هماهنگ می‌شود.</p></div></div>
+</div>
+
+<div class="sig">
+<blockquote>از اینکه این صفحه را مطالعه کردید ممنونم 🌷<br>مشتاق شنیدن نظر شما هستم تا دربارهٔ جزئیات و نیازهای کانال با هم صحبت کنیم.<br><span class="b">فاطمه سادات علی‌سبحانی</span></blockquote>
+</div>
+
+</main>
+
+<script>
+(function(){
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const M=v=>(v/1e6).toLocaleString('fa-IR',{maximumFractionDigits:2})+' میلیون';
+const T=v=>v>=1e6?M(v):fa(Math.round(v/1000))+' هزار';
+const r100=v=>Math.round(v/1e5)*1e5;
+const LVN=['پایه','متوسط','کامل'];
+const DAYS=['حداکثر ۳ روز','حداکثر ۴ روز','حداکثر ۱۰ روز'];
+const DAYS1=['حداکثر ۴ روز','حداکثر ۵ روز','حداکثر ۱۱ روز'];
+const TYPES={
+ mono:{name:'مونولوگ',emoji:'🎤',sub:'دو دوربین',rate:130000,mult:[1,1.3,1.6],br:[10,15,20,25,30],max:30,def:18,
+   cap:m=>2*m,capTxt:'۲ برابر طول نهایی',over:[400000,400000],img:true,multi:()=>true,
+   ex:['مونولوگ‌های فعلی کانال پله به پله',null,'کانال Codie Sanchez، نمونهٔ ارسالی شما'],
+   lv:['دو دوربین، حذف سکوت و تپق، تمیزکاری صدا، هوک کوتاه در شروع و یکی دو المان ساده مثل لوگو. بدون تایپوگرافی.',
+       'همهٔ موارد سطح پایه با هوکی جذاب‌تر، به‌اضافهٔ زوم در جاهای مناسب و تایپوگرافی روی جمله‌های کلیدی.',
+       'همهٔ موارد سطح متوسط با ریتم تندتر در کات و ترنزیشن، بی‌رول زیاد (با هوش مصنوعی یا بدون آن) و تایپوگرافی و المان بیشتر.']},
+ vlog:{name:'ولاگ',emoji:'🎒',sub:'روایت از فوتیج خام',rate:200000,mult:[1,1.2,1.4],br:[10,15,20,25,30],max:30,def:18,
+   cap:()=>120,capTxt:'۲ ساعت',over:[650000,650000],img:false,multi:()=>false,
+   ex:[null,'کانال Sydney Serena، نمونهٔ ارسالی شما (بین پایه و متوسط)','ولاگ‌های Leana Deeb، نمونهٔ ارسالی شما'],
+   lv:['انتخاب و کات از کل فوتیج، روایت‌سازی از تکه‌ها و موسیقی.',
+       'همهٔ موارد سطح پایه، به‌اضافهٔ چند المان بیشتر روی صفحه.',
+       'همهٔ موارد سطح متوسط، به‌اضافهٔ افکت صوتی، بخش‌بندی و عنوان‌بندی، داستان‌سازی و کارگردانی روی روایت، و نمایش المان مرتبط هر جا که لازم باشد.']},
+ pod:{name:'پادکست',emoji:'🎙️',sub:'میزبان، مهمان، نمای باز',rate:50000,mult:[1,1.3,1.6],br:[30,45,60,75,90],max:90,def:70,
+   cap:m=>1.3*m,capTxt:'۱٫۳ برابر طول نهایی',over:[400000,400000],img:true,multi:()=>true,
+   ex:['پادکست‌های فعلی کانال پله به پله','پادکست نمونهٔ ارسالی شما (Chloe Shih)','پادکست‌های Leana Deeb'],
+   lv:['سوییچ بین دوربین‌ها، تمیزکاری صدا و حذف تپق و سکوت.',
+       'تیزر و اینترو با هوک در شروع، سوییچ بین دوربین‌ها، چند زوم، صفحهٔ دوتکه در گفت‌وگوهای رفت‌وبرگشتی، نمایش چند تصویر مرتبط و متن در چند جای کلیدی.',
+       'همهٔ موارد سطح متوسط با المان گرافیکی و تصویر بیشتر، و متن بسیار بیشتر روی نکته‌هایی که باید تأکید شوند.']},
+ team:{name:'تیمی',emoji:'👥',sub:'سناریو و چند دوربین',rate:200000,mult:[1,1.3,1.6],br:[15,20,30,40],max:60,def:20,
+   cap:()=>120,capTxt:'۲ ساعت',over:[650000,650000],img:true,multi:s=>s.teamCams>1,
+   ex:[null,null,'کانال ویجیلند، نمونهٔ ارسالی شما'],
+   lv:['کات و جابه‌جایی بین دوربین‌ها بر اساس روایت سناریو.',
+       'همهٔ موارد سطح پایه، به‌اضافهٔ متن طنز، برجسته‌کردن حرف‌ها، افکت صوتی و زوم روی گوینده.',
+       'همهٔ موارد سطح متوسط، به‌اضافهٔ میم، گرافیک‌های ویژه مثل امتیاز مسابقه و المان‌های زیاد.']}
+};
+const st={type:'mono',minutes:18,level:1,podCams:3,teamCams:2,teamPeople:3,raw:30,color:false,rush:false,archive:'provided',searchCount:10,searchAuto:true,designCount:0,aiClips:0};
+let pkg=[];
+const $=id=>document.getElementById(id);
+const brOf=(t,m)=>t.br.find(x=>m<=x)??null;
+// suggested search images per final minute, by type and level
+const INCL=[0,5,10];
+const DENS={mono:[.5,.75,1],pod:[.1,.2,.35],team:[.2,.4,.6],vlog:[0,0,0]};
+const autoCount=()=>Math.max(1,Math.round(st.minutes*DENS[st.type][st.level]));
+
+function compute(){
+  const t=TYPES[st.type],m=st.minutes,b=brOf(t,m),L=[];let lo=0,hi=0,note='';
+  let base=r100(t.rate*(b||m)*t.mult[st.level]);
+  if(!b)note='برای ویدیوهای تیمی بلندتر از ۴۰ دقیقه، قیمت پس از دیدن فوتیج خام توافق می‌شود. عدد بالا تخمینی است.';
+  L.push(['تدوین · سطح '+LVN[st.level]+' · '+(b?'تا '+fa(b)+' دقیقه':fa(m)+' دقیقه'),base]);
+  let ed=base;
+  if(st.type==='pod'){const f={2:.9,3:1,4:1.1,5:1.2}[st.podCams];if(f!==1){const d=base*(f-1);L.push([fa(st.podCams)+' دوربین',d]);ed+=d}}
+  if(st.type==='team'){const f=(1+.1*Math.max(0,st.teamCams-2))*(1+.05*Math.max(0,st.teamPeople-3));if(f!==1){const d=base*(f-1);L.push(['دوربین و نفرات بیشتر',d]);ed+=d}}
+  if(st.color){const p=t.multi(st)?.15:.1;const d=ed*p;L.push(['اصلاح رنگ و نور ('+fa(p*100)+'٪)',d]);ed+=d}
+  if(st.rush){const d=ed*.5;L.push(['تحویل فوری (×۱٫۵)',d]);ed+=d}
+  lo+=ed;hi+=ed;
+  const cap=t.cap(m),over=Math.max(0,st.raw-cap);
+  if(over>0){const h=over/60,a=h*t.over[0],z=h*t.over[1];L.push(['فوتیج خام اضافه ('+fa(Math.round(over))+' دقیقه)',[a,z]]);lo+=a;hi+=z}
+  if(t.img){
+    if(st.archive==='search'&&st.searchCount>0){const n=st.searchCount,inc=INCL[st.level],x=Math.max(0,n-inc);if(inc>0)L.push(['جستجوی '+fa(Math.min(n,inc))+' تصویر (داخل سطح '+LVN[st.level]+')',0]);if(x>0){const a=x*45000,z=x*45000;L.push(['جستجوی '+fa(x)+' تصویر اضافه',[a,z]]);lo+=a;hi+=z}}
+    if(st.designCount>0){const a=st.designCount*65000,z=st.designCount*65000;L.push(['طراحی '+fa(st.designCount)+' تصویر',[a,z]]);lo+=a;hi+=z}
+    if(st.aiClips>0){const a=st.aiClips*450000,z=st.aiClips*450000;L.push([fa(st.aiClips)+' کلیپ هوش مصنوعی',[a,z]]);lo+=a;hi+=z}
+  }
+  const plus=(st.type==='team')||(st.type==='pod'&&m>60);
+  const days=st.rush?'زودتر از زمان استاندارد، با هماهنگی':(plus?DAYS1:DAYS)[st.level];
+  return {t,b,L,lo,hi,cap,note,days,label:t.name+' · '+LVN[st.level]+' · '+fa(m)+' دقیقه'};
+}
+const fmt=(lo,hi)=>lo===hi?M(lo):M(lo)+' تا '+M(hi);
+
+function pills(el,items,cur,on){el.innerHTML=items.map(i=>`<button class="pill" data-k="${i.k}" aria-pressed="${i.k===cur}">${i.h}</button>`).join('');el.querySelectorAll('button').forEach(b=>b.onclick=()=>on(b.dataset.k))}
+
+function render(){
+  const t=TYPES[st.type];
+  pills($('types'),Object.entries(TYPES).map(([k,x])=>({k,h:`${x.emoji} <b>${x.name}</b><small>${x.sub}</small>`})),st.type,k=>{st.type=k;const x=TYPES[k];st.minutes=x.def;st.raw=k==='vlog'||k==='team'?120:Math.round(x.def*(k==='pod'?1.2:1.6));if(!x.img)st.archive='provided';st.searchAuto=true;render()});
+  pills($('levels'),t.lv.map((d,i)=>({k:String(i),h:`<b>${LVN[i]}</b><small>${d}</small>${t.ex[i]?`<small>📍 ${t.ex[i]}</small>`:''}`})),String(st.level),k=>{st.level=+k;render()});
+  const s=$('minutes');s.min=st.type==='pod'?10:3;s.max=t.max;s.value=st.minutes;
+  $('minOut').textContent=fa(st.minutes)+' دقیقه';
+  const b=brOf(t,st.minutes);$('brOut').textContent=b?'بازهٔ قیمت: تا '+fa(b)+' دقیقه':'خارج از جدول';
+  $('ruler').innerHTML=t.br.map(x=>`<div class="${x===b?'on':''}">تا ${fa(x)}</div>`).join('')+(st.type==='team'?`<div class="${b?'':'on'}">بیش از ۴۰</div>`:'');
+  $('setup').hidden=!(st.type==='pod'||st.type==='team');$('setupPod').hidden=st.type!=='pod';$('setupTeam').hidden=st.type!=='team';
+  $('setupNote').textContent=st.type==='pod'?'قیمت پایهٔ پادکست برای ۳ دوربین است. با ۲ دوربین ۱۰٪ کمتر و برای هر دوربین بیشتر ۱۰٪ بیشتر می‌شود.':'قیمت پایه برای حداکثر ۲ دوربین و ۳ نفر است. هر دوربین بیشتر ۱۰٪ و هر نفر بیشتر ۵٪ اضافه می‌کند.';
+  $('podCams').value=st.podCams;$('teamCams').value=st.teamCams;$('teamPeople').value=st.teamPeople;$('raw').value=st.raw;
+  $('color').checked=st.color;$('rush').checked=st.rush;
+  $('imgBox').hidden=!t.img;
+  pills($('archive'),[{k:'provided',h:'<b>تصاویر را خودمان می‌دهیم</b><small>بدون هزینهٔ اضافه</small>'},{k:'search',h:'<b>جستجو از اینترنت</b><small>'+(INCL[st.level]?'تا '+fa(INCL[st.level])+' تصویر داخل این سطح، ':'')+'هر تصویر بیشتر ۴۵ هزار</small>'}],st.archive,k=>{st.archive=k;render()});
+  $('fSearch').hidden=st.archive!=='search';
+  if(st.searchAuto)st.searchCount=autoCount();
+  $('autoNote').innerHTML=st.searchAuto?'پیشنهاد خودکار بر اساس نوع، طول و سطح ویدیو':'<button class="btn" id="autoBtn" style="padding:0 8px;font-size:.78rem">برگشت به عدد پیشنهادی ('+fa(autoCount())+')</button>';
+  if(!st.searchAuto)$('autoBtn').onclick=()=>{st.searchAuto=true;render()};
+  ['searchCount','designCount','aiClips'].forEach(k=>$(k).value=st[k]);
+  const c=compute();
+  $('rawNote').textContent='داخل قیمت: تا '+(st.type==='vlog'||st.type==='team'?t.capTxt:fa(Math.round(c.cap))+' دقیقه ('+t.capTxt+')');
+  $('rTitle').textContent=c.label;
+  $('rTotal').textContent=fmt(c.lo,c.hi);
+  $('rSub').textContent='تومان · زمان تحویل: '+c.days;
+  $('rLines').innerHTML=c.L.map(([n,v])=>`<div class="line"><span>${n}</span><span>${Array.isArray(v)?T(v[0])+' تا '+T(v[1]):(v===0?'داخل قیمت':T(v))}</span></div>`).join('')+`<div class="line sum"><span>جمع</span><span>${fmt(c.lo,c.hi)}</span></div>`+(c.note?`<p class="note">${c.note}</p>`:'');
+  renderPkg();
+}
+function renderPkg(){
+  if(!pkg.length){$('pList').innerHTML='';$('pTotal').textContent='—';$('pInfo').textContent='ویدیوها را تنظیم کنید و به پکیج اضافه کنید.';return}
+  $('pList').innerHTML=pkg.map((p,i)=>`<li><span>${p.label}</span><span style="white-space:nowrap">${fmt(p.lo,p.hi)} <button data-i="${i}" aria-label="حذف">✕</button></span></li>`).join('');
+  $('pList').querySelectorAll('button').forEach(b=>b.onclick=()=>{pkg.splice(+b.dataset.i,1);renderPkg()});
+  const lo=pkg.reduce((a,p)=>a+p.lo,0),hi=pkg.reduce((a,p)=>a+p.hi,0),d=pkg.length>=8?15:(pkg.length>=4?10:0),f=1-d/100;
+  $('pTotal').textContent=fmt(lo*f,hi*f);
+  $('pInfo').textContent=fa(pkg.length)+' ویدیو در ماه'+(d?' · با '+fa(d)+'٪ تخفیف':' · تخفیف از ۴ ویدیو به بالا');
+}
+$('minutes').oninput=e=>{st.minutes=+e.target.value;render()};
+$('podCams').onchange=e=>{st.podCams=+e.target.value;render()};
+['teamCams','teamPeople','raw','searchCount','designCount','aiClips'].forEach(k=>$(k).onchange=e=>{st[k]=Math.max(k.startsWith('team')?1:0,+e.target.value||0);if(k==='searchCount')st.searchAuto=false;render()});
+$('color').onchange=e=>{st.color=e.target.checked;render()};
+$('rush').onchange=e=>{st.rush=e.target.checked;render()};
+$('addPkg').onclick=()=>{const c=compute();pkg.push({label:c.label,lo:c.lo,hi:c.hi});renderPkg();$('addPkg').textContent='اضافه شد';setTimeout(()=>$('addPkg').textContent='افزودن به پکیج ماهانه',1200)};
+$('clearPkg').onclick=()=>{pkg=[];renderPkg()};
+
+// levels & tables sections
+let lvT='mono',tbT='mono';
+function renderLv(){
+  pills($('lvTabs'),Object.entries(TYPES).map(([k,x])=>({k,h:x.emoji+' '+x.name})),lvT,k=>{lvT=k;renderLv()});
+  const t=TYPES[lvT],cl=['gr','y','pk'];
+  $('lvCards').innerHTML=t.lv.map((d,i)=>`<div class="callout ${cl[i]}"><span class="e">${['🌱','🌿','🌳'][i]}</span><div><strong>${LVN[i]}</strong><p class="small" style="margin:4px 0 0">${d}</p>${t.ex[i]?`<p class="small" style="margin:6px 0 0;color:var(--blue)">📍 ${t.ex[i]}</p>`:''}</div></div>`).join('');
+}
+function renderTbl(){
+  pills($('tblTabs'),Object.entries(TYPES).map(([k,x])=>({k,h:x.emoji+' '+x.name})),tbT,k=>{tbT=k;renderTbl()});
+  const t=TYPES[tbT];
+  $('tbl').innerHTML=`<table><thead><tr><th>طول ویدیوی نهایی</th>${LVN.map(n=>`<th>${n}</th>`).join('')}</tr></thead><tbody>${t.br.map(b=>`<tr><td>تا ${fa(b)} دقیقه</td>${t.mult.map(x=>`<td>${M(r100(t.rate*b*x))}</td>`).join('')}</tr>`).join('')}${tbT==='team'?'<tr><td>بیش از ۴۰ دقیقه</td><td colspan="3">پس از دیدن فوتیج خام توافق می‌شود</td></tr>':''}</tbody></table>`;
+  $('tblNote').textContent={mono:'قیمت‌ها به تومان و برای دو دوربین است.',vlog:'قیمت‌ها به تومان است.',pod:'قیمت‌ها به تومان و برای ۳ دوربین است. با ۲ دوربین ۱۰٪ کمتر و برای هر دوربین بیشتر ۱۰٪ بیشتر می‌شود.',team:'قیمت‌ها به تومان و برای حداکثر ۲ دوربین و ۳ نفر است. هر دوربین بیشتر ۱۰٪ و هر نفر بیشتر ۵٪ اضافه می‌کند.'}[tbT];
+}
+render();renderLv();renderTbl();
+// starter package
+const STARTER=[['mono',20,2],['pod',60,1],['mono',20,2],['pod',60,1]];
+const priceOf=(k,m,l)=>{const t=TYPES[k];return r100(t.rate*brOf(t,m)*t.mult[l])};
+(function(){
+  const rows=STARTER.map(([k,m,l],i)=>`<tr><td>${TYPES[k].emoji} ${TYPES[k].name} ${fa(m)} دقیقه‌ای</td><td>${LVN[l]}</td><td>${M(priceOf(k,m,l))}</td></tr>`).join('');
+  $('starterRows').innerHTML=rows;
+  const sum=STARTER.reduce((a,[k,m,l])=>a+priceOf(k,m,l),0);
+  $('starterTotal').textContent='جمع ماه اول: '+M(sum*0.9)+' تومان (با ۱۰٪ تخفیف پکیج؛ پیش از تخفیف '+M(sum)+')';
+  $('useStarter').onclick=()=>{pkg=STARTER.map(([k,m,l])=>({label:TYPES[k].name+' · '+LVN[l]+' · '+fa(m)+' دقیقه',lo:priceOf(k,m,l),hi:priceOf(k,m,l)}));renderPkg();document.querySelector('.calc').scrollIntoView({behavior:'smooth'})};
+})();
+
+})();
+</script>
+</body>
+</html>
